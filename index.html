@@ -818,6 +818,31 @@
     })();
   </script>
 
+
+  <!-- YOUTUBE: VIDEO ALEATORIO ENTRE LAS PUBLICACIONES RECIENTES -->
+  <script>
+    (async () => {
+      const reproductor = document.querySelector(".youtube-wrapper iframe");
+      if (!reproductor) return;
+      try {
+        const respuesta = await fetch("datos/youtube.json", {
+          cache: "no-cache",
+          signal: AbortSignal.timeout(8000)
+        });
+        if (!respuesta.ok) return;
+        const datos = await respuesta.json();
+        const videos = (Array.isArray(datos.videos) ? datos.videos : [])
+          .filter((video) => /^[A-Za-z0-9_-]{11}$/.test(video.id));
+        if (!videos.length) return;
+        const video = videos[Math.floor(Math.random() * videos.length)];
+        reproductor.src = "https://www.youtube.com/embed/" + video.id;
+        reproductor.title = video.title || "Video de YouTube de Sr.Tuki";
+      } catch {
+        // Conservar el video original si no se puede cargar la lista.
+      }
+    })();
+  </script>
+
 </body>
 
 </html>
