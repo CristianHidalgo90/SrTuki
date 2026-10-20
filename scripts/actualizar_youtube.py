@@ -11,10 +11,12 @@ request = urllib.request.Request(url, headers={"User-Agent": "SrTuki-site/1.0"})
 with urllib.request.urlopen(request, timeout=30) as response:
     root = ET.fromstring(response.read())
 ns = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
-if root.findtext("yt:channelId", namespaces=ns) != CHANNEL:
+if root.findtext("yt:channelId", namespaces=ns) not in (CHANNEL, CHANNEL.removeprefix("UC")):
     raise ValueError("El feed no corresponde al canal esperado")
 videos = []
 for entry in root.findall("atom:entry", ns):
+    if entry.findtext("yt:channelId", namespaces=ns) != CHANNEL:
+        continue
     video_id = entry.findtext("yt:videoId", default="", namespaces=ns)
     if re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
         videos.append({"id": video_id, "title": entry.findtext("atom:title", default="", namespaces=ns)})
