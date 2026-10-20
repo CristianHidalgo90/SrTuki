@@ -783,6 +783,41 @@
     });
   </script>
 
+
+  <!-- FLICKR: FOTO ALEATORIA ENTRE LAS PUBLICACIONES RECIENTES -->
+  <script>
+    (() => {
+      const enlace = document.querySelector(".flickr-wrapper a");
+      const imagen = enlace?.querySelector("img");
+      if (!imagen) return;
+
+      window.mostrarFotoFlickr = (datos) => {
+        const fotos = (Array.isArray(datos?.items) ? datos.items : []).filter(
+          (foto) => foto.author_id === "39341155@N06" &&
+            /^https:\/\/live\.staticflickr\.com\//.test(foto.media?.m || "") &&
+            /^https:\/\/www\.flickr\.com\/photos\/srtuki\/\d+\//.test(foto.link || "")
+        );
+        if (!fotos.length) return;
+
+        const foto = fotos[Math.floor(Math.random() * fotos.length)];
+        const previa = new Image();
+        previa.onload = () => {
+          imagen.src = previa.src;
+          imagen.alt = foto.title?.trim() || "Foto de Flickr de Sr.Tuki";
+          enlace.href = foto.link;
+        };
+        // Mantener la foto actual si la nueva imagen no se puede cargar.
+        previa.src = foto.media.m.replace(/_m\.jpg$/, "_b.jpg");
+      };
+
+      const feed = document.createElement("script");
+      feed.src = "https://www.flickr.com/services/feeds/photos_public.gne?id=39341155%40N06&format=json&jsoncallback=mostrarFotoFlickr";
+      feed.async = true;
+      feed.onload = feed.onerror = () => feed.remove();
+      document.body.appendChild(feed);
+    })();
+  </script>
+
 </body>
 
 </html>
