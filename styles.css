@@ -1746,3 +1746,44 @@
   object-fit: contain;
   vertical-align: middle;
 }
+
+/* ========================================
+   ENLACES MÓVILES DESPUÉS DE NOW PLAYING
+   ======================================== */
+
+.enlaces-mobile {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .columna-perfil .enlaces-mobile {
+    display: block;
+    margin: 0;
+    padding: 20px 18px;
+    text-align: center;
+  }
+
+  .columna-perfil .enlaces-mobile h2 {
+    color: #a14f2a;
+    font-size: clamp(16px, 4.5vw, 18px);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+
+  .columna-perfil .enlaces-mobile .lista-enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .columna-perfil .enlaces-mobile .enlace-personal {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .panel-derecho > .enlaces {
+    display: none;
+  }
+}
