@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "AM2R: Return of Samus",
-  enlace: "https://github.com/AM2R-Community-Developers/AM2RLauncher",
-  imagen: "https://raw.githubusercontent.com/AM2R-Community-Developers/AM2R-Localizations/main/titles/%5Benglish%5D%20x000y000%20AM2R%20Return%20Of%20Samus.png"
+  titulo: "Yoshi and the Mysterious Book",
+  enlace: "https://www.nintendo.com/es-cl/store/products/yoshi-and-the-mysterious-book-switch-2/",
+  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.5/store/software/switch2/70010000119859/1d209ad6d0d519da06a81e7d238c5416c69e675665493529534bce98aca31a84"
 };
 
 function renderNowPlaying() {
