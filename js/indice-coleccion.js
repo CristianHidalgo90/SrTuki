@@ -40,10 +40,17 @@
     return respuesta.json();
   }
 
+  // Siluetas monocromas que heredan el tamaño y color del resumen.
+  const iconosResumen = {
+    portatil: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="22" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path fill-rule="evenodd" d="M7 1h14a2 2 0 0 1 2 2v19a5 5 0 0 1-5 5H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm1 3v10h12V4H8Zm2 2h8v6h-8V6Zm-1 11v2H7v2h2v2h2v-2h2v-2h-2v-2H9Zm9 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm3-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg>',
+    cartucho: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="22" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path fill-rule="evenodd" d="M5 2h18v3h2v20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5h2V2Zm3 3v12h12V5H8Zm2 2h8v8h-8V7ZM8 21v3h2v-3H8Zm5 0v3h2v-3h-2Zm5 0v3h2v-3h-2Z"/></svg>',
+    consola: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="22" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path fill-rule="evenodd" d="M5 5h18l4 7v12H1V12l4-7Zm1.2 2L4 11h20l-2.2-4H6.2ZM4 14v7h14v-7H4Zm2 2h10v3H6v-3Zm14-2v7h4v-7h-4Z"/></svg>'
+  };
+
   function tarjetaResumen(icono, valor, etiqueta) {
     return `
       <article class="indice-resumen-card">
-        <i class="fa-solid ${icono}" aria-hidden="true"></i>
+        <i class="${iconosResumen[icono] ? "indice-icono" : `fa-solid ${icono}`}" aria-hidden="true">${iconosResumen[icono] || ""}</i>
         <strong>${valor}</strong>
         <span>${etiqueta}</span>
       </article>
@@ -56,10 +63,10 @@
 
     contenedor.innerHTML = [
       tarjetaResumen("fa-gamepad", stats.juegos_sobremesa, "Juegos sobremesa"),
-      tarjetaResumen("fa-mobile-screen-button", stats.juegos_portatiles, "Juegos portátiles"),
-      tarjetaResumen("fa-tv", stats.total_consolas, "Total consolas"),
+      tarjetaResumen("portatil", stats.juegos_portatiles, "Juegos portátiles"),
+      tarjetaResumen("consola", stats.total_consolas, "Total consolas"),
       tarjetaResumen("fa-chess-pawn", stats.accesorios, "Accesorios y figuras"),
-      tarjetaResumen("fa-gamepad", stats.total_juegos, "Total juegos"),
+      tarjetaResumen("cartucho", stats.total_juegos, "Total juegos"),
       tarjetaResumen("fa-trophy", stats.terminados, "Juegos terminados")
     ].join("");
   }
