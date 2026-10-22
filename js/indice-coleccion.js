@@ -57,8 +57,9 @@
     contenedor.innerHTML = [
       tarjetaResumen("fa-gamepad", stats.juegos_sobremesa, "Juegos sobremesa"),
       tarjetaResumen("fa-mobile-screen-button", stats.juegos_portatiles, "Juegos portátiles"),
-      tarjetaResumen("fa-tv", stats.consolas, "Consolas"),
-      tarjetaResumen("fa-puzzle-piece", stats.accesorios, "Accesorios y figuras"),      tarjetaResumen("fa-trophy", stats.terminados, "Juegos terminados")
+      tarjetaResumen("fa-tv", stats.total_consolas, "Total consolas"),
+      tarjetaResumen("fa-puzzle-piece", stats.accesorios, "Accesorios y figuras"),
+      tarjetaResumen("fa-gamepad", stats.total_juegos, "Total juegos")
     ].join("");
   }
 
