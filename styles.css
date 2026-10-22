@@ -2185,3 +2185,42 @@
   }
 }
 
+/* ========================================
+   CONTADORES POR AÑO - JUEGOS TERMINADOS
+   ======================================== */
+
+.anio-resumen-derecha {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.anio-contador {
+  min-width: 34px;
+  height: 26px;
+  padding: 0 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(91, 192, 235, 0.14);
+  border: 1px solid rgba(91, 192, 235, 0.34);
+  color: #5bc0eb;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+@media (max-width: 700px) {
+  .anio-resumen-derecha {
+    gap: 8px;
+  }
+
+  .anio-contador {
+    min-width: 32px;
+    height: 24px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
