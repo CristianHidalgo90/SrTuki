@@ -124,7 +124,7 @@
     return `
       <details class="indice-grupo" ${abrir ? "open" : ""}>
         <summary>
-          <span>${escapar(grupo.grupo)}</span>
+          <span>${escapar(grupo.categoria === "Consolas" ? `Consolas - ${grupo.grupo}` : grupo.grupo)}</span>
           <span class="indice-grupo-cantidad">${items.length}</span>
         </summary>
         <ul class="indice-items">
