@@ -65,7 +65,7 @@
       tarjetaResumen("fa-gamepad", stats.juegos_sobremesa, "Juegos sobremesa"),
       tarjetaResumen("portatil", stats.juegos_portatiles, "Juegos portátiles"),
       tarjetaResumen("consola", stats.total_consolas, "Total consolas"),
-      tarjetaResumen("fa-chess-pawn", stats.accesorios, "Accesorios y figuras"),
+      tarjetaResumen("fa-chess-pawn", stats.accesorios, "Accesorios, figuras y otros"),
       tarjetaResumen("cartucho", stats.total_juegos, "Total juegos"),
       tarjetaResumen("fa-trophy", stats.terminados, "Juegos terminados")
     ].join("");
