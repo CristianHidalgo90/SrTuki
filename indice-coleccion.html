@@ -17,7 +17,7 @@
   <meta property="og:description" content="Indice de la colección de Sr.Tuki.">
   <meta property="og:url" content="https://srtuki.cl/indice-coleccion.html">
   <meta property="og:image" content="https://64.media.tumblr.com/82dab56d0893b4f6f87ca4c80d363da3/eb5a1dbf1eb4025c-e3/s2048x3072/505a576219f5c7689925dd72e037e56549aefe46.jpg">
-  <meta property="og:image:alt" content="Sr.Tuki - Juegos Terminados">
+  <meta property="og:image:alt" content="Sr.Tuki - Indice Coleccion">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Indice coleccion | Sr.Tuki">
@@ -37,7 +37,7 @@
   <meta name="theme-color" content="#0a1c24">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=20261021-ilustracion-mobile">
+  <link rel="stylesheet" href="styles.css?v=20261022-indice-coleccion">
 </head>
 
 <body class="page-indice-coleccion">
@@ -94,7 +94,59 @@
     </div>
 
     <!-- INDICE COLECCION -->
-    <main class="contenido-central">
+    <main class="contenido-central indice-panel">
+      <header class="indice-encabezado">
+        <h1 class="indice-titulo">Indice Coleccion</h1>
+        <p class="indice-subtitulo">
+          Un índice navegable de mi colección, organizado por tipo, consola y sistema.
+        </p>
+      </header>
+
+      <section class="indice-resumen" id="indiceResumen" aria-label="Resumen de la colección"></section>
+
+      <section class="indice-herramientas" aria-label="Herramientas del índice">
+        <div class="indice-buscador-wrap">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input
+            class="indice-buscador"
+            id="indiceBuscador"
+            type="search"
+            placeholder="Buscar juego, consola, accesorio..."
+            autocomplete="off"
+            aria-label="Buscar en la colección"
+          >
+          <button class="indice-limpiar" id="indiceLimpiar" type="button" aria-label="Limpiar búsqueda">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="indice-vistas" aria-label="Vistas del índice">
+          <button class="indice-chip activo" type="button" data-vista="coleccion">Colección</button>
+          <button class="indice-chip" type="button" data-vista="terminados-plataforma">Terminados por consola</button>
+          <button class="indice-chip" type="button" data-vista="terminados-anio">Terminados por año</button>
+        </div>
+
+        <div class="indice-filtros" id="indiceFiltrosColeccion" aria-label="Categorías de la colección">
+          <button class="indice-chip activo" type="button" data-categoria="Todos">Todos</button>
+          <button class="indice-chip" type="button" data-categoria="Juegos Sobremesa">Sobremesa</button>
+          <button class="indice-chip" type="button" data-categoria="Juegos Portátiles">Portátiles</button>
+          <button class="indice-chip" type="button" data-categoria="Consolas">Consolas</button>
+          <button class="indice-chip" type="button" data-categoria="Accesorios, figuras, etc.">Accesorios y figuras</button>
+          <button class="indice-chip" type="button" data-categoria="Juegos Digitales">Digitales</button>
+        </div>
+      </section>
+
+      <div class="indice-resultados-head">
+        <strong id="indiceContador">Cargando…</strong>
+        <span>Toca cada sistema para desplegar sus elementos.</span>
+      </div>
+
+      <div class="indice-carga" id="indiceCarga">
+        <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+        <span>Cargando colección…</span>
+      </div>
+
+      <section class="indice-resultados" id="indiceResultados" aria-live="polite"></section>
     </main>
 
     <!-- PANEL DERECHO -->
@@ -174,21 +226,6 @@
     </aside>
   </div>
 
-
-
-  <!-- VISOR DE IMÁGENES DE JUEGOS TERMINADOS -->
-  <div class="visor" id="visorTerminados" aria-hidden="true">
-    <button
-      type="button"
-      class="visor-cerrar"
-      id="visorTerminadosCerrar"
-      aria-label="Cerrar imagen ampliada">×</button>
-    <img
-      class="visor-imagen"
-      id="visorTerminadosImagen"
-      alt="Imagen ampliada de juego terminado">
-  </div>
-
   <a href="https://www.instagram.com/eto2d/" class="ilustracion-inferior" target="_blank" rel="noopener noreferrer" aria-label="Instagram de eto2d">
     <img src="https://40.media.tumblr.com/0345b33ecd4d32e888161336d94b6a9e/tumblr_nii14nPWWr1r32rcso1_500.png" alt="Ilustración de eto2d">
   </a>
@@ -228,92 +265,7 @@
     });
   </script>
 
-
-  <!-- GALERÍAS DE JUEGOS TERMINADOS + VISOR -->
-  <script>
-    function crearGaleriaTerminados(anio, totalImagenes, imagenesPrimero = []) {
-      const galeria = document.getElementById(`galeria${anio}`);
-
-      if (!galeria) {
-        return;
-      }
-
-      const destacadas = new Set(imagenesPrimero);
-      const orden = [
-        ...imagenesPrimero,
-        ...Array.from({ length: totalImagenes }, (_, indice) => indice + 1)
-          .filter((numero) => !destacadas.has(numero))
-      ];
-
-      orden.forEach((i) => {
-        const numero = String(i).padStart(2, "0");
-        const ruta = `imagenes/terminados/${anio}/${anio}-${numero}.jpeg`;
-
-        const boton = document.createElement("button");
-        boton.type = "button";
-        boton.className = "juego-terminado-imagen";
-        boton.dataset.imagen = ruta;
-        boton.setAttribute(
-          "aria-label",
-          `Ampliar imagen ${i} de juegos terminados en ${anio}`
-        );
-
-        const imagen = document.createElement("img");
-        imagen.src = ruta;
-        imagen.alt = `Juego terminado en ${anio} - imagen ${i}`;
-        imagen.loading = "lazy";
-        imagen.decoding = "async";
-
-        boton.appendChild(imagen);
-        galeria.appendChild(boton);
-      });
-    }
-
-    // Las imágenes nuevas se agregan al comienzo de la lista del año.
-    crearGaleriaTerminados(2026, 34, [34]);
-    crearGaleriaTerminados(2025, 36);
-    crearGaleriaTerminados(2024, 29);
-    crearGaleriaTerminados(2023, 46);
-    crearGaleriaTerminados(2022, 55);
-
-    const visorTerminados = document.getElementById("visorTerminados");
-    const visorTerminadosImagen = document.getElementById("visorTerminadosImagen");
-    const visorTerminadosCerrar = document.getElementById("visorTerminadosCerrar");
-
-    document.querySelectorAll(".juego-terminado-imagen").forEach((boton) => {
-      boton.addEventListener("click", () => {
-        visorTerminadosImagen.src = boton.dataset.imagen;
-        visorTerminados.classList.add("abierto");
-        visorTerminados.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      });
-    });
-
-    function cerrarVisorTerminados() {
-      visorTerminados.classList.remove("abierto");
-      visorTerminados.setAttribute("aria-hidden", "true");
-      visorTerminadosImagen.src = "";
-      document.body.style.overflow = "";
-    }
-
-    visorTerminadosCerrar.addEventListener("click", cerrarVisorTerminados);
-
-    visorTerminados.addEventListener("click", (evento) => {
-      if (evento.target === visorTerminados) {
-        cerrarVisorTerminados();
-      }
-    });
-
-    document.addEventListener("keydown", (evento) => {
-      if (
-        evento.key === "Escape" &&
-        visorTerminados.classList.contains("abierto")
-      ) {
-        cerrarVisorTerminados();
-      }
-    });
-  </script>
-
+  <script src="js/indice-coleccion.js?v=20261022-excel" defer></script>
   <script src="js/now-playing.js?v=20261021-yoshi" defer></script>
 
 </body>
