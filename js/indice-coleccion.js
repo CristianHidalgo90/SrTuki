@@ -4,9 +4,7 @@
     sobremesa: "datos/indice-sobremesa.json",
     portatiles: "datos/indice-portatiles.json",
     consolas: "datos/indice-consolas.json",
-    accesorios: "datos/indice-accesorios.json",
-    digitales: "datos/indice-digitales.json",
-    terminadosPlataforma: "datos/indice-terminados-plataforma.json",
+    accesorios: "datos/indice-accesorios.json",    terminadosPlataforma: "datos/indice-terminados-plataforma.json",
     terminadosAnio: "datos/indice-terminados-anio.json"
   };
 
@@ -60,9 +58,7 @@
       tarjetaResumen("fa-gamepad", stats.juegos_sobremesa, "Juegos sobremesa"),
       tarjetaResumen("fa-mobile-screen-button", stats.juegos_portatiles, "Juegos portátiles"),
       tarjetaResumen("fa-tv", stats.consolas, "Consolas"),
-      tarjetaResumen("fa-puzzle-piece", stats.accesorios, "Accesorios y figuras"),
-      tarjetaResumen("fa-cloud-arrow-down", stats.juegos_digitales, "Juegos digitales"),
-      tarjetaResumen("fa-trophy", stats.terminados, "Juegos terminados")
+      tarjetaResumen("fa-puzzle-piece", stats.accesorios, "Accesorios y figuras"),      tarjetaResumen("fa-trophy", stats.terminados, "Juegos terminados")
     ].join("");
   }
 
@@ -208,7 +204,6 @@
         portatiles,
         consolas,
         accesorios,
-        digitales,
         terminadosPlataforma,
         terminadosAnio
       ] = await Promise.all([
@@ -217,7 +212,6 @@
         cargarJson(rutas.portatiles),
         cargarJson(rutas.consolas),
         cargarJson(rutas.accesorios),
-        cargarJson(rutas.digitales),
         cargarJson(rutas.terminadosPlataforma),
         cargarJson(rutas.terminadosAnio)
       ]);
@@ -227,8 +221,7 @@
           ...sobremesa,
           ...portatiles,
           ...consolas,
-          ...accesorios,
-          ...digitales
+          ...accesorios
         ],
         terminadosPlataforma,
         terminadosAnio
