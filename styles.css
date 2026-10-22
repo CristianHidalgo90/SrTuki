@@ -1970,7 +1970,6 @@
   background: rgba(161, 79, 42, 0.5);
 }
 
-.indice-vistas,
 .indice-filtros {
   display: flex;
   flex-wrap: wrap;
@@ -2156,7 +2155,6 @@
     padding: 12px;
   }
 
-  .indice-vistas,
   .indice-filtros {
     justify-content: flex-start;
     overflow-x: auto;

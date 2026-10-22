@@ -132,7 +132,7 @@
 
     if (!contenedor || !contador || !filtros) return;
 
-    filtros.hidden = estado.vista !== "coleccion";
+    filtros.hidden = false;
 
     const grupos = obtenerGrupos();
     const hayBusqueda = Boolean(estado.busqueda.trim());
@@ -161,14 +161,6 @@
   }
 
   function registrarEventos() {
-    document.querySelectorAll("[data-vista]").forEach((boton) => {
-      boton.addEventListener("click", () => {
-        estado.vista = boton.dataset.vista;
-        activarBotones("[data-vista]", "vista", estado.vista);
-        pintarContenido();
-      });
-    });
-
     document.querySelectorAll("[data-categoria]").forEach((boton) => {
       boton.addEventListener("click", () => {
         estado.categoria = boton.dataset.categoria;
