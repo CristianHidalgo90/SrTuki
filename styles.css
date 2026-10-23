@@ -2224,3 +2224,39 @@
     font-size: 12px;
   }
 }
+
+/* ========================================
+   GOTY POR AÑO - JUEGOS TERMINADOS
+   ======================================== */
+
+.anio-terminado summary {
+  position: relative;
+}
+
+.anio-goty {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 220px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #d7d7d7;
+  font-size: clamp(12px, 1.15vw, 14px);
+  font-weight: normal;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .anio-goty {
+    position: static;
+    transform: none;
+    flex: 1 1 auto;
+    max-width: none;
+    margin: 0 8px;
+    white-space: normal;
+    line-height: 1.25;
+    font-size: 11px;
+  }
+}
