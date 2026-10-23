@@ -109,9 +109,16 @@
         ? `<span class="indice-item-estado ${item.jugado ? "si" : "no"}">Jugado: ${item.jugado ? "Sí" : "No"}</span>`
         : "";
 
+    const nombreConVideo = item.video
+      ? `<span class="indice-item-nombre">
+          <button type="button" class="indice-item-nombre indice-item-foto" data-foto="${escapar(item.imagen)}" aria-label="Ver foto de ${escapar(item.nombre)}">Donkey Kong Country <i class="fa-solid fa-camera" aria-hidden="true"></i></button>
+          (<a href="${escapar(item.video)}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">cartucho maldito</a>)
+        </span>`
+      : "";
+
     return `
       <li class="indice-item">
-        ${item.imagen ? `<button type="button" class="indice-item-nombre indice-item-foto" data-foto="${escapar(item.imagen)}" aria-label="Ver foto de ${escapar(item.nombre)}">${escapar(item.nombre)} <i class="fa-solid fa-camera" aria-hidden="true"></i></button>` : `<span class="indice-item-nombre">${escapar(item.nombre)}</span>`}
+        ${nombreConVideo || (item.imagen ? `<button type="button" class="indice-item-nombre indice-item-foto" data-foto="${escapar(item.imagen)}" aria-label="Ver foto de ${escapar(item.nombre)}">${escapar(item.nombre)} <i class="fa-solid fa-camera" aria-hidden="true"></i></button>` : `<span class="indice-item-nombre">${escapar(item.nombre)}</span>`)}
         ${estadoJugado}
       </li>
     `;
