@@ -118,7 +118,10 @@
 
     return `
       <li class="indice-item">
+        <span class="indice-item-nombre">
         ${nombreConVideo || (item.imagen ? `<button type="button" class="indice-item-nombre indice-item-foto" data-foto="${escapar(item.imagen)}" aria-label="Ver foto de ${escapar(item.nombre)}">${escapar(item.nombre)} <i class="fa-solid fa-camera" aria-hidden="true"></i></button>` : `<span class="indice-item-nombre">${escapar(item.nombre)}</span>`)}
+        ${(item.imagenes || []).map((ruta, indice) => `<button type="button" class="indice-item-foto" data-foto="${escapar(ruta)}" data-nombre="${escapar(item.nombre)} - foto ${indice + 2}" aria-label="Ver foto ${indice + 2} de ${escapar(item.nombre)}" style="margin-left: 6px;"><i class="fa-solid fa-camera" aria-hidden="true"></i> ${indice + 2}</button>`).join("")}
+        </span>
         ${estadoJugado}
       </li>
     `;
@@ -215,7 +218,7 @@
       if (!boton) return;
       origen = boton;
       imagen.src = boton.dataset.foto;
-      imagen.alt = boton.textContent.trim();
+      imagen.alt = boton.dataset.nombre || boton.textContent.trim();
       overflowAnterior = document.body.style.overflow;
       visor.showModal();
       document.body.style.overflow = "hidden";
