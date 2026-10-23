@@ -37,7 +37,7 @@
   <meta name="theme-color" content="#0a1c24">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=20261023-force-2021-list">
+  <link rel="stylesheet" href="styles.css?v=20261023-fotos-nes">
 </head>
 
 <body class="page-indice-coleccion">
@@ -256,8 +256,12 @@
     });
   </script>
 
-  <script src="js/indice-coleccion.js?v=20261022-iconos-nintendo" defer></script>
+  <script src="js/indice-coleccion.js?v=20261023-fotos-nes" defer></script>
   <script src="js/now-playing.js?v=20261021-yoshi" defer></script>
 
+  <dialog class="indice-visor" id="indiceVisor" aria-label="Foto del juego">
+    <button type="button" class="visor-cerrar" id="indiceVisorCerrar" aria-label="Cerrar foto">×</button>
+    <img class="visor-imagen" id="indiceVisorImagen" alt="">
+  </dialog>
 </body>
 </html>
