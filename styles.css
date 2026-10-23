@@ -2242,7 +2242,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #d7d7d7;
-  font-size: clamp(6px, 0.575vw, 7px);
+  font-size: clamp(10px, 1vw, 13px);
   font-weight: normal;
   text-align: center;
   pointer-events: none;
@@ -2257,7 +2257,7 @@
     margin: 0 8px;
     white-space: normal;
     line-height: 1.25;
-    font-size: 5.5px;
+    font-size: 10px;
   }
 }
 
