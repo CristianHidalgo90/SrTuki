@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Yoshi and the Mysterious Book",
-  enlace: "https://www.nintendo.com/es-cl/store/products/yoshi-and-the-mysterious-book-switch-2/",
-  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.5/store/software/switch2/70010000119859/1d209ad6d0d519da06a81e7d238c5416c69e675665493529534bce98aca31a84"
+  titulo: "Kirby: Squeak Squad",
+  enlace: "https://kirby.nintendo.com/about/",
+  imagen: "https://cdn.awsli.com.br/2500x2500/138/138431/produto/179784392/bda4e28291.jpg"
 };
 
 function renderNowPlaying() {
