@@ -1,4 +1,3 @@
-"""Actualizar los videos públicos recientes desde el feed oficial de YouTube."""
 import json
 import re
 import urllib.request

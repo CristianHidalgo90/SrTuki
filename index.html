@@ -12,7 +12,7 @@
 
   <title>Sr.Tuki</title>
 
-  <!-- SEO / COMPARTIR EN REDES -->
+  
   <meta name="description" content="Sitio personal de Sr.Tuki: videojuegos, Nintendo, Pokémon, colección, tarjetas de entrenador y publicaciones de mis redes.">
   <link rel="canonical" href="https://srtuki.cl/">
 
@@ -60,9 +60,7 @@
 
 
 
-    <!-- ========================================
-         PERFIL
-         ======================================== -->
+    
 
     <div class="columna-perfil" id="panelIzquierdo">
 
@@ -184,9 +182,7 @@
 
 
 
-    <!-- ========================================
-         POSTS
-         ======================================== -->
+    
 
     <section class="contenido-central">
 
@@ -204,7 +200,7 @@
 
 
 
-          <!-- INSTAGRAM -->
+          
 
           <article class="feed-card">
 
@@ -251,7 +247,7 @@
 
 
 
-          <!-- TWITTER -->
+          
 
           <article class="feed-card">
 
@@ -296,7 +292,7 @@
 
 
 
-          <!-- YOUTUBE -->
+          
 
           <article class="feed-card">
 
@@ -346,7 +342,7 @@
 
 
 
-          <!-- FLICKR -->
+          
 
           <article class="feed-card">
 
@@ -398,9 +394,7 @@
 
 
 
-    <!-- ========================================
-         PANEL DERECHO
-         ======================================== -->
+    
 
     <aside
       class="panel-derecho panel-lateral"
@@ -531,7 +525,7 @@
 
 
 
-      <!-- RRSS -->
+      
 
       <section class="rrss">
 
@@ -634,7 +628,7 @@
 
 
 
-      <!-- ENLACES -->
+      
 
       <section class="enlaces">
 
@@ -708,7 +702,7 @@
 
 
 
-  <!-- ILUSTRACIÓN -->
+  
 
   <a
     class="ilustracion-inferior"
@@ -727,7 +721,7 @@
 
 
 
-  <!-- INSTAGRAM -->
+  
 
   <script
     async
@@ -736,7 +730,7 @@
 
 
 
-  <!-- TWITTER -->
+  
 
   <script
     async
@@ -746,7 +740,7 @@
 
 
 
-  <!-- ALTURA DE PANELES -->
+  
 
   <script>
 
@@ -811,7 +805,7 @@
 
 
 
-  <!-- POKÉMON: SOPORTE PARA TOUCH Y TECLADO -->
+  
   <script>
     document.querySelectorAll(".pokemon").forEach((pokemon) => {
       pokemon.setAttribute("tabindex", "0");
@@ -851,7 +845,7 @@
   </script>
 
 
-  <!-- FLICKR: FOTO ALEATORIA ENTRE LAS PUBLICACIONES RECIENTES -->
+  
   <script>
     (() => {
       const enlace = document.querySelector(".flickr-wrapper a");
@@ -873,7 +867,7 @@
           imagen.alt = foto.title?.trim() || "Foto de Flickr de Sr.Tuki";
           enlace.href = foto.link;
         };
-        // Mantener la foto actual si la nueva imagen no se puede cargar.
+
         previa.src = foto.media.m.replace(/_m\.jpg$/, "_b.jpg");
       };
 
@@ -886,7 +880,7 @@
   </script>
 
 
-  <!-- YOUTUBE: VIDEO ALEATORIO ENTRE LAS PUBLICACIONES RECIENTES -->
+  
   <script>
     (async () => {
       const reproductor = document.querySelector(".youtube-wrapper iframe");
@@ -905,7 +899,7 @@
         reproductor.src = "https://www.youtube.com/embed/" + video.id;
         reproductor.title = video.title || "Video de YouTube de Sr.Tuki";
       } catch {
-        // Conservar el video original si no se puede cargar la lista.
+
       }
     })();
   </script>

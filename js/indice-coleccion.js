@@ -40,7 +40,7 @@
     return respuesta.json();
   }
 
-  // Siluetas monocromas que heredan el tamaño y color del resumen.
+
   const iconosResumen = {
     portatil: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="22" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path fill-rule="evenodd" d="M7 1h14a2 2 0 0 1 2 2v19a5 5 0 0 1-5 5H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm1 3v10h12V4H8Zm2 2h8v6h-8V6Zm-1 11v2H7v2h2v2h2v-2h2v-2h-2v-2H9Zm9 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm3-3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg>',
     cartucho: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="22" fill="currentColor" aria-hidden="true" focusable="false" style="display:block"><path fill-rule="evenodd" d="M5 2h18v3h2v20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5h2V2Zm3 3v12h12V5H8Zm2 2h8v8h-8V7ZM8 21v3h2v-3H8Zm5 0v3h2v-3h-2Zm5 0v3h2v-3h-2Z"/></svg>',
