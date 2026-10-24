@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "AM2R",
-  enlace: "https://metroid2remake.blogspot.com/",
-  imagen: "https://upload.wikimedia.org/wikipedia/commons/6/6e/AM2R-Return-of-Samus-Logo.png"
+  titulo: "Yoshi and the Mysterious Book",
+  enlace: "https://www.nintendo.com/es-cl/store/products/yoshi-and-the-mysterious-book-switch-2/",
+  imagen: "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00030000-00020002.png"
 };
 
 function renderNowPlaying() {
