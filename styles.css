@@ -1665,6 +1665,7 @@
 .now-playing-imagen {
   flex-shrink: 0;
   width: 95px;
+  aspect-ratio: 1 / 1;
   min-height: 82px;
   display: block;
   overflow: hidden;
