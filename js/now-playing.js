@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
   titulo: "Kirby: Squeak Squad",
   enlace: "https://kirby.nintendo.com/about/",
-  imagen: "https://media.gamestop.com/i/gamestop/10064043/Kirby-Squeak-Squad?fmt=auto%26h=768%26w=768"
+  imagen: "https://media.gamestop.com/i/gamestop/10064043/Kirby-Squeak-Squad?fmt=auto&h=768&w=768"
 };
 
 function renderNowPlaying() {
