@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
   titulo: "Yoshi and the Mysterious Book",
   enlace: "https://www.nintendo.com/es-cl/store/products/yoshi-and-the-mysterious-book-switch-2/",
-  imagen: "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00030000-00020002.png"
+  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.5/store/software/switch2/70010000119859/1d209ad6d0d519da06a81e7d238c5416c69e675665493529534bce98aca31a84"
 };
 
 function renderNowPlaying() {
@@ -24,7 +24,6 @@ function renderNowPlaying() {
       >
         <img
           src="${imagen}"
-          style="object-fit: contain; object-position: center; padding: 6px; box-sizing: border-box; transform: none;"
           alt="${titulo}"
           loading="lazy"
           decoding="async"
