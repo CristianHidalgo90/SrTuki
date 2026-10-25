@@ -97,7 +97,7 @@
         </h1>
 
 
-        <p class="descripcion">¡Hola! Soy el Tuki, bienvenidos a mi rincón personal. Aquí comparto mi colección de videojuegos y otras cosas que forman parte de mis pasatiempos. ¡Espero que disfruten la visita!</p>
+        <p class="descripcion">¡Hola! Soy el Tuki, bienvenidos a mi rincón personal. Aquí comparto mi colección de videojuegos y otras cosas que forman parte de mis pasatiempos.</p>
 
 
       </div>
@@ -736,65 +736,7 @@
 
   
 
-  <script>
-
-    const panelIzquierdo =
-      document.getElementById("panelIzquierdo");
-
-
-    const panelDerecho =
-      document.getElementById("panelDerecho");
-
-
-    function ajustarPaneles() {
-
-
-      if (window.innerWidth > 1250) {
-
-        panelDerecho.style.height =
-          "auto";
-
-        panelDerecho.style.minHeight =
-          panelIzquierdo.offsetHeight + "px";
-
-      }
-
-      else {
-
-        panelDerecho.style.height =
-          "auto";
-
-        panelDerecho.style.minHeight =
-          "0";
-
-      }
-
-    }
-
-
-    window.addEventListener(
-      "load",
-      ajustarPaneles
-    );
-
-
-    window.addEventListener(
-      "resize",
-      ajustarPaneles
-    );
-
-
-    const observador =
-      new ResizeObserver(
-        ajustarPaneles
-      );
-
-
-    observador.observe(
-      panelIzquierdo
-    );
-
-  </script>
+  
 
 
 
