@@ -2301,3 +2301,10 @@
 .indice-buscador::-ms-clear {
   display: none;
 }
+
+@media (max-width: 700px) {
+  :is(.page-coleccion, .page-indice-coleccion, .page-tarjetas, .page-terminados) .columna-perfil > .perfil,
+  :is(.page-coleccion, .page-indice-coleccion, .page-tarjetas, .page-terminados) #now-playing-root {
+    display: none;
+  }
+}
