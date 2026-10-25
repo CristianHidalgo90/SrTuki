@@ -2308,3 +2308,26 @@
     display: none;
   }
 }
+
+.portada-ampliar {
+  display: none;
+}
+
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+  .portada-ampliar {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+  }
+
+  .portada-ampliar:focus-visible {
+    outline: 3px solid #5bc0eb;
+    outline-offset: -4px;
+  }
+}
