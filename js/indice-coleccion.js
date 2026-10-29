@@ -128,12 +128,13 @@
   }
 
   function renderGrupo(grupo, abrir) {
-    const items = grupo.items
-      .filter((item) => itemCoincide(item, grupo))
-      .sort((a, b) => a.nombre.trim().localeCompare(b.nombre.trim(), "es", {
+    const items = grupo.items.filter((item) => itemCoincide(item, grupo));
+    if (!grupo.ordenPersonalizado) {
+      items.sort((a, b) => a.nombre.trim().localeCompare(b.nombre.trim(), "es", {
         sensitivity: "base",
         numeric: true
       }));
+    }
     if (!items.length) return "";
 
     return `
