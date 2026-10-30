@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Kirby: Squeak Squad",
-  enlace: "https://kirby.nintendo.com/about/",
-  imagen: "https://images.launchbox-app.com/r2_3e00e79b-f967-4220-85ef-ac8d4050cad8.jpg"
+  titulo: "Avenging Spirit",
+  enlace: "https://gamesdb.launchbox-app.com/games/details/17723-avenging-spirit",
+  imagen: "https://images.launchbox-app.com/f3aa41e5-a0c7-4ea1-8268-542308b1ea92.jpg"
 };
 
 function renderNowPlaying() {
