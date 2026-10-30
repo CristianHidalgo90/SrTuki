@@ -2388,3 +2388,18 @@
   }
   .page-index .portada-novedad-foto { height: 160px; }
 }
+
+.page-index .portada-novedad-ampliar {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: zoom-in;
+}
+.page-index .portada-novedad-ampliar:focus-visible {
+  outline: 3px solid #5bc0eb;
+  outline-offset: 4px;
+}
