@@ -34,7 +34,7 @@ function renderNowPlaying() {
 
         <div class="now-playing-encabezado">
           <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
-          <span>Now Playing:</span>
+          <span>Currently Playing:</span>
         </div>
 
         <a
