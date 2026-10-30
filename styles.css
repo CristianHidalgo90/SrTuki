@@ -2378,3 +2378,13 @@
   .page-index .portada-novedad { grid-template-columns: 1fr; }
   .page-index .portada-novedad-foto { height: 240px; }
 }
+
+@media (min-width: 951px) {
+  .page-index .portada-novedades { gap: 16px; }
+  .page-index .portada-novedad {
+    grid-template-columns: 144px minmax(0, 1fr);
+    gap: 22px;
+    padding: 20px;
+  }
+  .page-index .portada-novedad-foto { height: 160px; }
+}
