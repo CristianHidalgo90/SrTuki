@@ -1,0 +1,33 @@
+name: Reparar imagen terminados 2026-38
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/repair-2026-38.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reparar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Reconstruir imagen
+        run: |
+          cat tmp/2026-38-part00.txt               tmp/2026-38-part01.txt               tmp/2026-38-part02.txt               tmp/2026-38-part03.txt               tmp/2026-38-part04.txt             | base64 -d > imagenes/terminados/2026/2026-38.jpeg
+          test "$(wc -c < imagenes/terminados/2026/2026-38.jpeg)" -gt 18000
+          file imagenes/terminados/2026/2026-38.jpeg
+
+      - name: Publicar imagen corregida
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add imagenes/terminados/2026/2026-38.jpeg
+          git commit -m "Corregir imagen 2026-38" || exit 0
+          git pull --rebase origin main
+          git push origin HEAD:main
