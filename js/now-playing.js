@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Avenging Spirit",
-  enlace: "https://gamesdb.launchbox-app.com/games/details/17723-avenging-spirit",
-  imagen: "https://images.launchbox-app.com/f3aa41e5-a0c7-4ea1-8268-542308b1ea92.jpg"
+  titulo: "Super Smash Bros. Ultimate",
+  enlace: "https://www.smashbros.com/es_ES/",
+  imagen: "imagenes/coleccion/switch/super-smash-bros-ultimate.jpeg"
 };
 
 function renderNowPlaying() {
