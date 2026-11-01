@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Castlevania Dracula X",
-  enlace: "https://gamesdb.launchbox-app.com/games/images/155225-castlevania-advance-collection",
-  imagen: "https://images.launchbox-app.com/ac015037-1644-438c-b655-ab1afa262a35.jpg"
+  titulo: "Stardew Valley",
+  enlace: "https://gamesdb.launchbox-app.com/games/details/107465-stardew-valley",
+  imagen: "https://images.launchbox-app.com/85205248-8ed5-496e-9c13-791685eb29cc.jpg"
 };
 
 function renderNowPlaying() {
