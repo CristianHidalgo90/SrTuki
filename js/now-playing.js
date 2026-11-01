@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Super Smash Bros. Ultimate",
-  enlace: "https://www.smashbros.com/es_ES/",
-  imagen: "imagenes/coleccion/switch/super-smash-bros-ultimate.jpeg"
+  titulo: "Castlevania Dracula X",
+  enlace: "https://gamesdb.launchbox-app.com/games/images/155225-castlevania-advance-collection",
+  imagen: "https://images.launchbox-app.com/ac015037-1644-438c-b655-ab1afa262a35.jpg"
 };
 
 function renderNowPlaying() {
