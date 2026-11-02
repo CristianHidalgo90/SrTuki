@@ -143,7 +143,7 @@
       <details class="indice-grupo" ${abrir ? "open" : ""}>
         <summary>
           <span>${escapar(grupo.categoria === "Consolas" ? `Consolas - ${grupo.grupo}` : grupo.grupo)}</span>
-          <span class="indice-grupo-cantidad">${items.length}</span>
+          ${grupo.categoria === "Pokemon TCG" ? "" : `<span class="indice-grupo-cantidad">${items.length}</span>`}
         </summary>
         <ul class="indice-items">
           ${items.length ? items.map(renderItem).join("") : '<li class="indice-item">Aún no hay cartas añadidas.</li>'}
@@ -168,13 +168,14 @@
     const html = grupos
       .map((grupo) => {
         const coincidencias = grupo.items.filter((item) => itemCoincide(item, grupo));
-        total += coincidencias.length;
+        if (grupo.categoria !== "Pokemon TCG") total += coincidencias.length;
         return renderGrupo(grupo, hayBusqueda);
       })
       .filter(Boolean)
       .join("");
 
-    contador.textContent = `${total} resultado${total === 1 ? "" : "s"}`;
+    contador.hidden = estado.vista === "coleccion" && estado.categoria === "Pokemon TCG";
+    contador.textContent = contador.hidden ? "" : `${total} resultado${total === 1 ? "" : "s"}`;
 
     contenedor.innerHTML =
       html ||
