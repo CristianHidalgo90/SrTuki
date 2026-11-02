@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Stardew Valley",
-  enlace: "https://gamesdb.launchbox-app.com/games/details/107465-stardew-valley",
-  imagen: "https://images.launchbox-app.com/85205248-8ed5-496e-9c13-791685eb29cc.jpg"
+  titulo: "Castlevania: Belmont's Curse",
+  enlace: "https://www.nintendo.com/us/store/products/castlevania-belmonts-curse-switch/",
+  imagen: "imagenes/coleccion/switch/castlevania-belmonts-curse-midnight-edition.jpeg"
 };
 
 function renderNowPlaying() {
