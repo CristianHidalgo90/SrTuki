@@ -4,7 +4,9 @@
     sobremesa: "datos/indice-sobremesa.json",
     portatiles: "datos/indice-portatiles.json?v=20261027-3ds-fotos",
     consolas: "datos/indice-consolas.json?v=20261028-sobremesa-cronologico-v2",
-    accesorios: "datos/indice-accesorios.json",    terminadosPlataforma: "datos/indice-terminados-plataforma.json",
+    accesorios: "datos/indice-accesorios.json",
+    pokemonTcg: "datos/indice-pokemon-tcg.json",
+    terminadosPlataforma: "datos/indice-terminados-plataforma.json",
     terminadosAnio: "datos/indice-terminados-anio.json"
   };
 
@@ -135,7 +137,7 @@
         numeric: true
       }));
     }
-    if (!items.length) return "";
+    if (!items.length && (grupo.items.length || estado.busqueda)) return "";
 
     return `
       <details class="indice-grupo" ${abrir ? "open" : ""}>
@@ -144,7 +146,7 @@
           <span class="indice-grupo-cantidad">${items.length}</span>
         </summary>
         <ul class="indice-items">
-          ${items.map(renderItem).join("")}
+          ${items.length ? items.map(renderItem).join("") : '<li class="indice-item">Aún no hay cartas añadidas.</li>'}
         </ul>
       </details>
     `;
@@ -252,6 +254,7 @@
         portatiles,
         consolas,
         accesorios,
+        pokemonTcg,
         terminadosPlataforma,
         terminadosAnio
       ] = await Promise.all([
@@ -260,6 +263,7 @@
         cargarJson(rutas.portatiles),
         cargarJson(rutas.consolas),
         cargarJson(rutas.accesorios),
+        cargarJson(rutas.pokemonTcg),
         cargarJson(rutas.terminadosPlataforma),
         cargarJson(rutas.terminadosAnio)
       ]);
@@ -269,7 +273,8 @@
           ...sobremesa,
           ...portatiles,
           ...consolas,
-          ...accesorios
+          ...accesorios,
+          ...pokemonTcg
         ],
         terminadosPlataforma,
         terminadosAnio
