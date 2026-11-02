@@ -2403,3 +2403,34 @@
   outline: 3px solid #5bc0eb;
   outline-offset: 4px;
 }
+
+.volver-arriba-movil {
+  display: none;
+}
+@media (max-width: 700px) {
+  .volver-arriba-movil {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .volver-arriba-movil a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 24px;
+    border: 1px solid rgba(91, 192, 235, 0.35);
+    border-radius: 24px;
+    background: rgba(10, 28, 36, 0.92);
+    color: #5bc0eb;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .volver-arriba-movil a:focus-visible {
+    outline: 3px solid #5bc0eb;
+    outline-offset: 4px;
+  }
+}
