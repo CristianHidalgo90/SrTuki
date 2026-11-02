@@ -2434,3 +2434,13 @@
     outline-offset: 4px;
   }
 }
+
+.indice-subgrupos {
+  padding: 0 12px 12px;
+}
+.indice-subgrupos > .indice-grupo {
+  margin-bottom: 12px;
+}
+.indice-subgrupos > .indice-grupo:last-child {
+  margin-bottom: 0;
+}

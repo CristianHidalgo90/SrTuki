@@ -101,7 +101,8 @@
     return [
       item.nombre,
       grupo.grupo,
-      grupo.categoria
+      grupo.categoria,
+      grupo.grupoPadre
     ].some((valor) => normalizar(valor).includes(aguja));
   }
 
@@ -130,6 +131,25 @@
   }
 
   function renderGrupo(grupo, abrir) {
+    if (Array.isArray(grupo.subgrupos)) {
+      const contenido = grupo.subgrupos
+        .map((subgrupo) => renderGrupo({
+          ...subgrupo,
+          categoria: grupo.categoria,
+          grupoPadre: grupo.grupo
+        }, abrir))
+        .filter(Boolean)
+        .join("");
+      if (!contenido) return "";
+
+      return `
+        <details class="indice-grupo" ${abrir ? "open" : ""}>
+          <summary><span>${escapar(grupo.grupo)}</span></summary>
+          <div class="indice-subgrupos">${contenido}</div>
+        </details>
+      `;
+    }
+
     const items = grupo.items.filter((item) => itemCoincide(item, grupo));
     if (!grupo.ordenPersonalizado) {
       items.sort((a, b) => a.nombre.trim().localeCompare(b.nombre.trim(), "es", {
@@ -137,7 +157,9 @@
         numeric: true
       }));
     }
-    if (!items.length && (grupo.items.length || estado.busqueda)) return "";
+    const coincideGrupo = [grupo.grupo, grupo.categoria, grupo.grupoPadre]
+      .some((nombre) => normalizar(nombre).includes(normalizar(estado.busqueda)));
+    if (!items.length && (grupo.items.length || (estado.busqueda && !coincideGrupo))) return "";
 
     return `
       <details class="indice-grupo" ${abrir ? "open" : ""}>
