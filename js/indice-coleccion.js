@@ -3,7 +3,7 @@
     meta: "datos/indice-meta.json",
     sobremesa: "datos/indice-sobremesa.json",
     portatiles: "datos/indice-portatiles.json?v=20261027-3ds-fotos",
-    consolas: "datos/indice-consolas.json?v=20261028-sobremesa-cronologico-v2",
+    consolas: "datos/indice-consolas.json?v=20261103-switch-lite-portatil",
     accesorios: "datos/indice-accesorios.json",
     pokemonTcg: "datos/indice-pokemon-tcg.json",
     terminadosPlataforma: "datos/indice-terminados-plataforma.json",
