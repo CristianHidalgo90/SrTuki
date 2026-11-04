@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Star Fox",
-  enlace: "https://www.nintendo.com/us/store/products/star-fox-125676/",
-  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/w_320/ncom/My%20Nintendo%20Store/EN-US/Nintendo%20Switch%202/Software/Starfox/125676-nintendo-switch-2-starfox-2000x2000"
+  titulo: "Castlevania: Belmont's Curse",
+  enlace: "https://www.nintendo.com/us/store/products/castlevania-belmonts-curse-switch/",
+  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/store/software/switch/70010000116851/316832b5a2c5f3d34b658274354e1d1f41f81e0d51d4d3eb8cfdf95e86f89b76"
 };
 
 function renderNowPlaying() {
