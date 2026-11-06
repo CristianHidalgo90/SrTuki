@@ -5,7 +5,7 @@
     portatiles: "datos/indice-portatiles.json?v=20261027-3ds-fotos",
     consolas: "datos/indice-consolas.json?v=20261103-n64-pikachu",
     accesorios: "datos/indice-accesorios.json",
-    pokemonTcg: "datos/indice-pokemon-tcg.json",
+    pokemonTcg: "datos/indice-pokemon-tcg.json?v=20261106-johto",
     terminadosPlataforma: "datos/indice-terminados-plataforma.json",
     terminadosAnio: "datos/indice-terminados-anio.json"
   };
