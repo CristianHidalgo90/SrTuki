@@ -2547,3 +2547,8 @@
     right: 6px;
   }
 }
+
+.page-coleccion .contenido-central > .foto-principal:last-child {
+  margin-top: clamp(15px, 2vw, 22px);
+  margin-bottom: 0;
+}
