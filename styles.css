@@ -2473,3 +2473,77 @@
 .page-coleccion .galeria-grid .foto-galeria img {
   height: auto;
 }
+
+.visor-navegable {
+  padding-right: 64px;
+  padding-left: 64px;
+}
+
+.visor-navegable .visor-imagen {
+  max-width: calc(100vw - 128px);
+}
+
+.visor-flecha {
+  position: fixed;
+  top: 50%;
+  z-index: 5002;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 54px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(10, 28, 36, 0.95);
+  color: #52c4e8;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.visor-flecha[hidden] {
+  display: none;
+}
+
+.visor-anterior {
+  left: 10px;
+}
+
+.visor-siguiente {
+  right: 10px;
+}
+
+.visor-flecha:hover {
+  background: #a14f2a;
+  color: white;
+}
+
+.visor-flecha:focus-visible {
+  outline: 2px solid #52c4e8;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .visor-navegable {
+    padding-right: 52px;
+    padding-left: 52px;
+  }
+
+  .visor-navegable .visor-imagen {
+    max-width: calc(100vw - 104px);
+  }
+
+  .visor-flecha {
+    width: 38px;
+    height: 48px;
+  }
+
+  .visor-anterior {
+    left: 6px;
+  }
+
+  .visor-siguiente {
+    right: 6px;
+  }
+}
