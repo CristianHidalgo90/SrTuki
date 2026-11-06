@@ -2460,3 +2460,16 @@
   margin: 12px 0 0;
   font-size: clamp(15px, 2vw, 20px);
 }
+
+.page-coleccion .galeria-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.page-coleccion .galeria-grid .foto-galeria {
+  aspect-ratio: auto;
+}
+
+.page-coleccion .galeria-grid .foto-galeria img {
+  height: auto;
+}
