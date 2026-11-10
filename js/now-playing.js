@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
   titulo: "Donkey Kong Bananza",
   enlace: "https://www.nintendo.com/es-cl/store/products/donkey-kong-bananza-switch-2/",
-  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/w_800/store/software/switch2/70010000096809/4f7e9b8026eb1789b0673328b03fd4cc208ede42599601311c89ad0556cb39b6"
+  imagen: "imagenes/now-playing/donkey-kong-bananza-20261110.png"
 };
 
 function renderNowPlaying() {
