@@ -2552,3 +2552,13 @@
   margin-top: clamp(15px, 2vw, 22px);
   margin-bottom: 0;
 }
+
+.now-playing-imagen.now-playing-horizontal {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+}
+
+.page-index .portada-novedad-foto.portada-foto-horizontal {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
   titulo: "Donkey Kong Bananza",
-  enlace: "https://www.nintendo.com/us/store/products/donkey-kong-bananza-switch-2/",
-  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/w_320/ncom/My%20Nintendo%20Store/EN-US/Nintendo%20Switch%202/Software/Donkey%20Kong%20Bananza/121485-nintendo-switch-2-donkey-kong-bananza-2000x2000"
+  enlace: "https://www.nintendo.com/es-cl/store/products/donkey-kong-bananza-switch-2/",
+  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/w_800/store/software/switch2/70010000096809/4f7e9b8026eb1789b0673328b03fd4cc208ede42599601311c89ad0556cb39b6"
 };
 
 function renderNowPlaying() {
@@ -17,7 +17,7 @@ function renderNowPlaying() {
     <section class="now-playing panel-lateral" aria-label="Juego actual">
 
       <a
-        class="now-playing-imagen"
+        class="now-playing-imagen now-playing-horizontal"
         href="${enlace}"
         target="_blank"
         rel="noopener noreferrer"
