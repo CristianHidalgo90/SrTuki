@@ -1,7 +1,7 @@
 (() => {
   const rutas = {
-    meta: "datos/indice-meta.json",
-    sobremesa: "datos/indice-sobremesa.json",
+    meta: "datos/indice-meta.json?v=20261109-ocarina-of-time",
+    sobremesa: "datos/indice-sobremesa.json?v=20261109-ocarina-of-time",
     portatiles: "datos/indice-portatiles.json?v=20261027-3ds-fotos",
     consolas: "datos/indice-consolas.json?v=20261103-n64-pikachu",
     accesorios: "datos/indice-accesorios.json",
