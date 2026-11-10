@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Castlevania: Belmont's Curse",
-  enlace: "https://www.nintendo.com/us/store/products/castlevania-belmonts-curse-switch/",
-  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_2.0/store/software/switch/70010000116851/316832b5a2c5f3d34b658274354e1d1f41f81e0d51d4d3eb8cfdf95e86f89b76"
+  titulo: "Donkey Kong Bananza",
+  enlace: "https://www.nintendo.com/us/store/products/donkey-kong-bananza-switch-2/",
+  imagen: "https://assets.nintendo.com/image/upload/f_auto/q_auto/w_320/ncom/My%20Nintendo%20Store/EN-US/Nintendo%20Switch%202/Software/Donkey%20Kong%20Bananza/121485-nintendo-switch-2-donkey-kong-bananza-2000x2000"
 };
 
 function renderNowPlaying() {
