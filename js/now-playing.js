@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Donkey Kong Bananza",
-  enlace: "https://www.nintendo.com/es-cl/store/products/donkey-kong-bananza-switch-2/",
-  imagen: "imagenes/now-playing/donkey-kong-bananza-20261110.png"
+  titulo: "Super Smash Bros. Ultimate",
+  enlace: "https://www.nintendo.com/es-cl/store/products/super-smash-bros-ultimate-switch/",
+  imagen: "imagenes/now-playing/super-smash-bros-ultimate.jpg"
 };
 
 function renderNowPlaying() {
