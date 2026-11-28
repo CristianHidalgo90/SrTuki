@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 30 315 280" fill="#e54a2e">
+  <defs>
+    <mask id="separacion">
+      <rect x="0" y="0" width="365" height="320" fill="#fff"/>
+      <rect x="99" y="31" width="167" height="244" rx="24" fill="#000"/>
+    </mask>
+  </defs>
+  <g mask="url(#separacion)">
+    <rect x="57" y="58" width="161" height="234" rx="16" transform="rotate(-15 140 175)"/>
+    <rect x="145" y="58" width="161" height="234" rx="16" transform="rotate(15 225 175)"/>
+  </g>
+  <rect x="108" y="40" width="149" height="226" rx="16"/>
+</svg>

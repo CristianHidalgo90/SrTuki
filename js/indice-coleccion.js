@@ -1,18 +1,19 @@
 (() => {
+  const esPokemonTcg = document.body.dataset.indice === "pokemon-tcg";
   const rutas = {
     meta: "datos/indice-meta.json?v=20261119-quitar-gal-guardians",
     sobremesa: "datos/indice-sobremesa.json?v=20261119-quitar-gal-guardians",
     portatiles: "datos/indice-portatiles.json?v=20261027-3ds-fotos",
     consolas: "datos/indice-consolas.json?v=20261103-n64-pikachu",
     accesorios: "datos/indice-accesorios.json",
-    pokemonTcg: "datos/indice-pokemon-tcg.json?v=20261119-dex",
+    pokemonTcg: "datos/indice-pokemon-tcg.json?v=20261127-trading-card-games",
     terminadosPlataforma: "datos/indice-terminados-plataforma.json",
     terminadosAnio: "datos/indice-terminados-anio.json"
   };
 
   const estado = {
     vista: "coleccion",
-    categoria: "Todos",
+    categoria: esPokemonTcg ? "Pokemon TCG" : "Todos",
     busqueda: "",
     datos: null
   };
@@ -90,6 +91,8 @@
       }));
     }
 
+    if (esPokemonTcg) return estado.datos.coleccion;
+
     return estado.datos.coleccion.filter((grupo) =>
       estado.categoria === "Todos" || grupo.categoria === estado.categoria
     );
@@ -165,7 +168,7 @@
       <details class="indice-grupo" ${abrir ? "open" : ""}>
         <summary>
           <span>${escapar(grupo.categoria === "Consolas" ? `Consolas - ${grupo.grupo}` : grupo.grupo)}</span>
-          ${grupo.categoria === "Pokemon TCG" ? "" : `<span class="indice-grupo-cantidad">${items.length}</span>`}
+          ${esPokemonTcg || grupo.categoria === "Pokemon TCG" ? "" : `<span class="indice-grupo-cantidad">${items.length}</span>`}
         </summary>
         <ul class="indice-items">
           ${items.length ? items.map(renderItem).join("") : '<li class="indice-item">Aún no hay cartas añadidas.</li>'}
@@ -179,9 +182,9 @@
     const contador = document.getElementById("indiceContador");
     const filtros = document.getElementById("indiceFiltrosColeccion");
 
-    if (!contenedor || !contador || !filtros) return;
+    if (!contenedor || !contador) return;
 
-    filtros.hidden = false;
+    if (filtros) filtros.hidden = esPokemonTcg;
 
     const grupos = obtenerGrupos();
     const hayBusqueda = Boolean(estado.busqueda.trim());
@@ -271,39 +274,27 @@
     const estadoCarga = document.getElementById("indiceCarga");
 
     try {
-      const [
-        meta,
-        sobremesa,
-        portatiles,
-        consolas,
-        accesorios,
-        pokemonTcg,
-        terminadosPlataforma,
-        terminadosAnio
-      ] = await Promise.all([
-        cargarJson(rutas.meta),
-        cargarJson(rutas.sobremesa),
-        cargarJson(rutas.portatiles),
-        cargarJson(rutas.consolas),
-        cargarJson(rutas.accesorios),
-        cargarJson(rutas.pokemonTcg),
-        cargarJson(rutas.terminadosPlataforma),
-        cargarJson(rutas.terminadosAnio)
-      ]);
-
-      estado.datos = {
-        coleccion: [
-          ...sobremesa,
-          ...portatiles,
-          ...consolas,
-          ...accesorios,
-          ...pokemonTcg
-        ],
-        terminadosPlataforma,
-        terminadosAnio
-      };
-
-      pintarResumen(meta.stats);
+      if (esPokemonTcg) {
+        const pokemonTcg = await cargarJson(rutas.pokemonTcg);
+        estado.datos = { coleccion: pokemonTcg };
+      } else {
+        const [meta, sobremesa, portatiles, consolas, accesorios,
+          terminadosPlataforma, terminadosAnio] = await Promise.all([
+          cargarJson(rutas.meta),
+          cargarJson(rutas.sobremesa),
+          cargarJson(rutas.portatiles),
+          cargarJson(rutas.consolas),
+          cargarJson(rutas.accesorios),
+          cargarJson(rutas.terminadosPlataforma),
+          cargarJson(rutas.terminadosAnio)
+        ]);
+        estado.datos = {
+          coleccion: [...sobremesa, ...portatiles, ...consolas, ...accesorios],
+          terminadosPlataforma,
+          terminadosAnio
+        };
+        pintarResumen(meta.stats);
+      }
       registrarEventos();
       registrarVisor();
       pintarContenido();
@@ -316,7 +307,7 @@
       if (estadoCarga) {
         estadoCarga.innerHTML = `
           <i class="fa-solid fa-triangle-exclamation"></i>
-          <span>No se pudo cargar el índice de la colección.</span>
+          <span>${esPokemonTcg ? "No se pudieron cargar las cartas." : "No se pudo cargar el índice de la colección."}</span>
         `;
         estadoCarga.classList.add("error");
       }
