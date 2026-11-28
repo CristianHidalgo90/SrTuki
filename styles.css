@@ -2562,3 +2562,8 @@
   height: auto;
   aspect-ratio: 16 / 9;
 }
+
+.now-playing-imagen.now-playing-vertical {
+  aspect-ratio: 266 / 374;
+  min-height: 0;
+}

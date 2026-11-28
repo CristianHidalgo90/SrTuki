@@ -1,7 +1,7 @@
 const NOW_PLAYING = {
-  titulo: "Super Smash Bros. Ultimate",
-  enlace: "https://www.nintendo.com/es-cl/store/products/super-smash-bros-ultimate-switch/",
-  imagen: "imagenes/now-playing/super-smash-bros-ultimate.jpg"
+  titulo: "Muramasa: The Demon Blade",
+  enlace: "https://en.wikipedia.org/wiki/Muramasa:_The_Demon_Blade",
+  imagen: "imagenes/now-playing/muramasa-the-demon-blade.jpg"
 };
 
 function renderNowPlaying() {
@@ -17,7 +17,7 @@ function renderNowPlaying() {
     <section class="now-playing panel-lateral" aria-label="Juego actual">
 
       <a
-        class="now-playing-imagen now-playing-horizontal"
+        class="now-playing-imagen now-playing-vertical"
         href="${enlace}"
         target="_blank"
         rel="noopener noreferrer"
